@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://fkbeclom7elo"]
+
+[ext_resource type="Texture2D" uid="uid://bhsd3ic6culue" path="res://assets/tilesets/Fantasy Swamp Forest/Free/BG_3/BG_3.png" id="1_2y56o"]
+[ext_resource type="Texture2D" uid="uid://cfkl5h4e56pdg" path="res://assets/tilesets/Fantasy Swamp Forest/Free/BG_2/BG_2.png" id="2_qrq05"]
+[ext_resource type="Texture2D" uid="uid://4fu7dvpmrst5" path="res://assets/tilesets/Fantasy Swamp Forest/Free/BG_1/BG_1.png" id="3_bis5b"]
+[ext_resource type="PackedScene" uid="uid://b621k71x1rmpx" path="res://scenes/character_scenes/player.tscn" id="4_j74q3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wtyyv"]
+
+[node name="Node2D" type="Node2D" unique_id=2114599598]
+
+[node name="Background" type="ParallaxBackground" parent="." unique_id=1787743775]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background" unique_id=301042779]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer" unique_id=1515927148]
+texture = ExtResource("1_2y56o")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background" unique_id=95223431]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer2" unique_id=1088580669]
+texture = ExtResource("2_qrq05")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background" unique_id=1565184742]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer3" unique_id=1731205139]
+position = Vector2(9, 4)
+texture = ExtResource("3_bis5b")
+
+[node name="player" parent="." unique_id=1780545448 instance=ExtResource("4_j74q3")]
+position = Vector2(100, -65)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1301351784]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1134986051]
+position = Vector2(6, 180)
+shape = SubResource("WorldBoundaryShape2D_wtyyv")
