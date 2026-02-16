@@ -558,10 +558,10 @@ script = ExtResource("1_03k6k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=591381449]
 position = Vector2(45, 36)
 sprite_frames = SubResource("SpriteFrames_88ewx")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1508914885]
+[node name="idle" type="CollisionShape2D" parent="." unique_id=1508914885]
 position = Vector2(46, 41)
 shape = SubResource("CapsuleShape2D_nbn53")
 
@@ -575,3 +575,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
+
+[node name="jump" type="CollisionShape2D" parent="." unique_id=1416044657]
+position = Vector2(47, 32)
+shape = SubResource("CapsuleShape2D_nbn53")
