@@ -6,8 +6,8 @@ const ACCELERATION        := 900.0
 const FRICTION            := 1400.0
 const AIR_CONTROL         := 0.65
 const JUMP_VELOCITY       := -320.0
-const DASH_SPEED          := 420.0
-const DASH_DISTANCE       := 300.0
+const DASH_SPEED          := 320.0
+const DASH_DISTANCE       := 175.0
 
 ## --- State Variables ---
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")

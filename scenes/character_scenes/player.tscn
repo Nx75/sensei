@@ -549,7 +549,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nbn53"]
-radius = 4.0
+radius = 6.0
 height = 16.0
 
 [node name="player" type="CharacterBody2D" unique_id=1780545448]
@@ -558,11 +558,11 @@ script = ExtResource("1_03k6k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=591381449]
 position = Vector2(45, 36)
 sprite_frames = SubResource("SpriteFrames_88ewx")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="idle" type="CollisionShape2D" parent="." unique_id=1508914885]
-position = Vector2(46, 41)
+position = Vector2(47, 41)
 shape = SubResource("CapsuleShape2D_nbn53")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=784344251]
