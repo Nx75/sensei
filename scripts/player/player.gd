@@ -9,6 +9,8 @@ const JUMP_VELOCITY       := -320.0
 const DASH_SPEED          := 320.0
 const DASH_DISTANCE       := 175.0
 
+var is_dead := false
+
 ## --- State Variables ---
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking: bool = false
@@ -103,3 +105,10 @@ func _update_animations() -> void:
 			anim.play("idle")
 	else:
 		anim.play("jump")
+
+func die():
+
+	if is_dead:
+		return
+	is_dead = true
+	get_tree().call_deferred("reload_current_scene")

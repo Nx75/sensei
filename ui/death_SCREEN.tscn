@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://ddlijwvweuebw"]
+
+[ext_resource type="Script" uid="uid://b8urchwdf33p" path="res://scripts/extras/death_screen.gd" id="1_xlux1"]
+[ext_resource type="Texture2D" uid="uid://bpadpvnvdl7ck" path="res://assets/Environments/lava-background/PNG/background.png" id="2_byr4s"]
+[ext_resource type="Texture2D" uid="uid://c0omgsm2007us" path="res://assets/Environments/lava-background/PNG/lava-background-preview.png" id="3_xfm8t"]
+[ext_resource type="FontFile" uid="uid://wsjcfwytp0j1" path="res://assets/Font Pack/Boxy-Bold-Font/Boxy-Bold.ttf" id="4_ayw3j"]
+[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="5_xr21l"]
+[ext_resource type="Texture2D" uid="uid://bwywpsj45sk55" path="res://assets/UI Buttons/MediavelFree.png" id="6_4c4q7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ot4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bcp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8jcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbsda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cop0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oumb1"]
+
+[node name="Death" type="Control" unique_id=1644673144]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xlux1")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=825362779]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Sprite2D" parent="Background" unique_id=1470389546]
+position = Vector2(581, 322)
+scale = Vector2(2.6712964, 2.6666665)
+texture = ExtResource("2_byr4s")
+metadata/_edit_lock_ = true
+
+[node name="lava_bg" type="Sprite2D" parent="Background" unique_id=1839128248]
+position = Vector2(573.7474, 327.33124)
+scale = Vector2(2.6632059, 2.6889064)
+texture = ExtResource("3_xfm8t")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="." unique_id=1809157794]
+z_index = 1
+layout_mode = 0
+offset_left = 437.0
+offset_top = 114.0
+offset_right = 776.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("4_ayw3j")
+theme_override_font_sizes/font_size = 48
+text = "you DIed"
+uppercase = true
+
+[node name="Vbox-Buttons" type="VBoxContainer" parent="." unique_id=1533321767]
+z_index = 2
+layout_mode = 0
+offset_left = 481.0
+offset_top = 229.0
+offset_right = 659.0
+offset_bottom = 412.0
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="Vbox-Buttons" unique_id=1947859419]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_xr21l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ot4n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0bcp5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l8jcj")
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="Vbox-Buttons" unique_id=1302882086]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_xr21l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jbsda")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cop0s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oumb1")
+text = "QUIT"
+
+[node name="Vbox-Holder" type="VBoxContainer" parent="." unique_id=1553204332]
+z_index = 1
+layout_mode = 0
+offset_left = 481.0
+offset_top = 229.0
+offset_right = 659.0
+offset_bottom = 396.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Holder-retry" type="Sprite2D" parent="Vbox-Holder" unique_id=729461388]
+position = Vector2(88, 16)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("6_4c4q7")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+
+[node name="Holder-Options" type="Sprite2D" parent="Vbox-Holder" unique_id=1643195735]
+position = Vector2(88, 89)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("6_4c4q7")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+
+[connection signal="pressed" from="Vbox-Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Vbox-Buttons/Quit" to="." method="_on_quit_pressed"]

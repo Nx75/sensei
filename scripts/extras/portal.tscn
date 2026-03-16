@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://vfxcc6q48f14"]
+
+[ext_resource type="Script" uid="uid://kg5i4kdv4qcr" path="res://scripts/extras/portal.gd" id="1_3aaw1"]
+[ext_resource type="Texture2D" uid="uid://cxwkkxgym3dua" path="res://assets/Portals/Dimensional_Portal.png" id="1_fl2kd"]
+[ext_resource type="AudioStream" uid="uid://dy8wigp0x5i1j" path="res://assets/Music/portal.mp3" id="3_rlx2b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3aaw1"]
+radius = 6.0
+height = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlx2b"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bf2o"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tkgl"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlhpv"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8jyr"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56435"]
+atlas = ExtResource("1_fl2kd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba7ax"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_rlx2b")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6bf2o")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6tkgl")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_xlhpv")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_k8jyr")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_56435")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[node name="Portal" type="Area2D" unique_id=310951388]
+script = ExtResource("1_3aaw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690393556]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_3aaw1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2135564840]
+sprite_frames = SubResource("SpriteFrames_ba7ax")
+animation = &"portal"
+autoplay = "portal"
+frame_progress = 0.3200229
+
+[node name="DestinationPoint" type="Marker2D" parent="." unique_id=1109101728]
+position = Vector2(-35, -1)
+
+[node name="op" type="AudioStreamPlayer2D" parent="." unique_id=601450489]
+stream = ExtResource("3_rlx2b")
+volume_db = 20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

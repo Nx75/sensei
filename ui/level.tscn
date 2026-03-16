@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cx1dlrw2hye8g"]
+
+[ext_resource type="Script" uid="uid://bdubwet2ytvc7" path="res://scripts/level_selector.gd" id="1_thx7o"]
+[ext_resource type="Texture2D" uid="uid://bpadpvnvdl7ck" path="res://assets/Environments/lava-background/PNG/background.png" id="2_r87to"]
+[ext_resource type="Texture2D" uid="uid://c0omgsm2007us" path="res://assets/Environments/lava-background/PNG/lava-background-preview.png" id="3_y11jn"]
+[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="4_pwhew"]
+[ext_resource type="Texture2D" uid="uid://bwywpsj45sk55" path="res://assets/UI Buttons/MediavelFree.png" id="5_tdm4c"]
+[ext_resource type="AudioStream" uid="uid://duv0iebjmjqra" path="res://assets/Music/Background_first.mp3" id="6_60jou"]
+[ext_resource type="AudioStream" uid="uid://3ixhrd5n4tqc" path="res://assets/Music/glitchy_sound.mp3" id="7_hs5k2"]
+[ext_resource type="FontFile" uid="uid://cmrssoxjjjt20" path="res://assets/Font Pack/PaintDropsRegular-0WaJo.ttf" id="8_r87to"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ot4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bcp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8jcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbsda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cop0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oumb1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y11jn"]
+draw_center = false
+
+[node name="Menu" type="Control" unique_id=1644673144]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_thx7o")
+
+[node name="Background" type="PanelContainer" parent="." unique_id=825362779]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Sprite2D" parent="Background" unique_id=1470389546]
+position = Vector2(581, 322)
+scale = Vector2(2.6712964, 2.6666665)
+texture = ExtResource("2_r87to")
+metadata/_edit_lock_ = true
+
+[node name="lava_bg" type="Sprite2D" parent="Background" unique_id=1839128248]
+position = Vector2(573.7474, 327.33124)
+scale = Vector2(2.6632059, 2.6889064)
+texture = ExtResource("3_y11jn")
+metadata/_edit_lock_ = true
+
+[node name="Vbox-Buttons" type="VBoxContainer" parent="." unique_id=1533321767]
+z_index = 2
+layout_mode = 0
+offset_left = 497.0
+offset_top = 288.0
+offset_right = 675.0
+offset_bottom = 455.0
+theme_override_constants/separation = 30
+
+[node name="easy" type="Button" parent="Vbox-Buttons" unique_id=1947859419]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pwhew")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ot4n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0bcp5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l8jcj")
+text = "EASY"
+
+[node name="normal" type="Button" parent="Vbox-Buttons" unique_id=1302882086]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pwhew")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jbsda")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cop0s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oumb1")
+text = "MEDIUM"
+
+[node name="hard" type="Button" parent="Vbox-Buttons" unique_id=883160730]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pwhew")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ot4n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0bcp5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l8jcj")
+text = "HARD"
+
+[node name="Board" type="Sprite2D" parent="." unique_id=1057966928]
+position = Vector2(589, 332)
+scale = Vector2(5, 5)
+texture = ExtResource("5_tdm4c")
+region_enabled = true
+region_rect = Rect2(3, 1, 71, 92)
+
+[node name="Vbox-Holder" type="VBoxContainer" parent="." unique_id=1553204332]
+z_index = 1
+layout_mode = 0
+offset_left = 497.0
+offset_top = 288.0
+offset_right = 675.0
+offset_bottom = 455.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Holder-EASY" type="Sprite2D" parent="Vbox-Holder" unique_id=729461388]
+position = Vector2(89, 17)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("5_tdm4c")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+
+[node name="Holder-NORMAL" type="Sprite2D" parent="Vbox-Holder" unique_id=1643195735]
+position = Vector2(88, 89)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("5_tdm4c")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+
+[node name="Holder-HARD" type="Sprite2D" parent="Vbox-Holder" unique_id=2040876169]
+position = Vector2(88, 163.99998)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("5_tdm4c")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=310182401]
+stream = ExtResource("6_60jou")
+
+[node name="glitchy" type="AudioStreamPlayer" parent="." unique_id=171399757]
+stream = ExtResource("7_hs5k2")
+
+[node name="Title" type="Label" parent="." unique_id=212127421]
+z_index = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 483.0
+offset_top = 49.0
+offset_right = 687.0
+offset_bottom = 121.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72289914, 0.035818964, 0.04669343, 1)
+theme_override_fonts/font = ExtResource("8_r87to")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_y11jn")
+text = "levels"
+uppercase = true
+
+[connection signal="pressed" from="Vbox-Buttons/easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Vbox-Buttons/normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Vbox-Buttons/hard" to="." method="_on_hard_pressed"]

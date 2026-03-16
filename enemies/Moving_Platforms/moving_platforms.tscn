@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://p2d1nn8ni68"]
+
+[ext_resource type="Script" uid="uid://bot0slnv0tn0" path="res://enemies/Moving_Platforms/moving_platforms.gd" id="1_8qieq"]
+[ext_resource type="Texture2D" uid="uid://dkeyouh6okcny" path="res://assets/Environments/cyberpunk-detective-props/PNG/elevator-track.png" id="1_evfox"]
+
+[sub_resource type="Curve2D" id="Curve2D_mt1gg"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, -121)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2jds"]
+size = Vector2(47.5, 5.75)
+
+[node name="Moving_platforms" type="Path2D" unique_id=1934202723]
+curve = SubResource("Curve2D_mt1gg")
+script = ExtResource("1_8qieq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1412591816]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=1831739160]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=922975761]
+collision_layer = 513
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1269905560]
+position = Vector2(-1, 0)
+scale = Vector2(1, 1.24)
+texture = ExtResource("1_evfox")
+region_enabled = true
+region_rect = Rect2(272, 16, 48, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=668229301]
+shape = SubResource("RectangleShape2D_b2jds")
+one_way_collision = true

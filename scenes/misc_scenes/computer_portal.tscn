@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://i4akpy2qvdjj"]
+
+[ext_resource type="Script" uid="uid://csifhsm2v1q06" path="res://scripts/extras/computer_portal.gd" id="1_ki8oj"]
+[ext_resource type="Texture2D" uid="uid://bx17kw8onmpid" path="res://assets/tilesets/Fantasy Swamp Forest/Free/Terrain-and-Props-OLD.png" id="2_jhyj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg1ii"]
+size = Vector2(8, 15)
+
+[node name="computer_portal" type="Area2D" unique_id=888117330]
+script = ExtResource("1_ki8oj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=27155038]
+texture = ExtResource("2_jhyj2")
+region_enabled = true
+region_rect = Rect2(114.75386, 63.91779, 10.40506, 16.485935)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=229439098]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gg1ii")

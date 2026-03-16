@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://d1be5qw3l2snw"]
+
+[ext_resource type="Script" uid="uid://1wstyxendjwj" path="res://enemies/ghost.gd" id="1_jyll1"]
+[ext_resource type="Texture2D" uid="uid://csswhi40l52of" path="res://assets/Enemies and NPC/enemy-ghost/Spritesheets/transparent-no-particles.png" id="1_uk6m1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyll1"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwllq"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34o1m"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg3bh"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbwoc"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci5kr"]
+atlas = ExtResource("1_uk6m1")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etobg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyll1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwllq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34o1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg3bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbwoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci5kr")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk6m1"]
+size = Vector2(18, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyll1"]
+size = Vector2(27.5, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyll1"]
+radius = 8.062258
+
+[node name="ghost" type="CharacterBody2D"]
+script = ExtResource("1_jyll1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_etobg")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_uk6m1")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+position = Vector2(1.25, 7.5)
+shape = SubResource("RectangleShape2D_jyll1")
+
+[node name="WallRayUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -100)
+
+[node name="WallRayDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 100)
+
+[node name="WallRayLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-100, 0)
+
+[node name="WallRayRight" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
+
+[node name="WeakSpot" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeakSpot"]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_jyll1")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
