@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cda52qudqaahp" path="res://assets/tilesets/Environments/Tall Forest/Tall Forest Expansion pack/Layers/tileset.png" id="4_b6g3q"]
 [ext_resource type="Texture2D" uid="uid://cfkl5h4e56pdg" path="res://assets/tilesets/Fantasy Swamp Forest/Free/BG_2/BG_2.png" id="4_y2i0y"]
 [ext_resource type="Texture2D" uid="uid://4fu7dvpmrst5" path="res://assets/tilesets/Fantasy Swamp Forest/Free/BG_1/BG_1.png" id="5_hjtjv"]
-[ext_resource type="Script" uid="uid://c1okth3ixpcny" path="res://scripts/misc_scripts/collision.gd" id="9_kqrfg"]
 [ext_resource type="PackedScene" uid="uid://ben3fvdnccdhh" path="res://scenes/misc_scenes/collision.tscn" id="10_8perq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqm3i"]
@@ -984,9 +983,6 @@ sources/1 = SubResource("TileSetAtlasSource_kqrfg")
 sources/2 = SubResource("TileSetAtlasSource_8perq")
 sources/3 = SubResource("TileSetAtlasSource_45lt1")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kqrfg"]
-distance = -298.0
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8perq"]
 distance = -261.0
 
@@ -1032,12 +1028,6 @@ metadata/_edit_lock_ = true
 position = Vector2(9, 4)
 texture = ExtResource("5_hjtjv")
 metadata/_edit_lock_ = true
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1719182698]
-script = ExtResource("9_kqrfg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1805406207]
-shape = SubResource("WorldBoundaryShape2D_kqrfg")
 
 [node name="kill_zone" parent="." unique_id=10730735 instance=ExtResource("10_8perq")]
 
