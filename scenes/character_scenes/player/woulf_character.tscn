@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dfp8y56ajayra"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/woulf_human/Black_Werewolf/Idle.png" id="1_p3x4t"]
+[ext_resource type="Texture2D" path="res://assets/sprites/woulf_human/Black_Werewolf/Run.png" id="2_b4153"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmxw7"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xustd"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jwls"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhaiy"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wih0l"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq7wj"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o6bx"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1meu"]
+atlas = ExtResource("1_p3x4t")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhekn"]
+atlas = ExtResource("2_b4153")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knxnk"]
+atlas = ExtResource("2_b4153")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr2wb"]
+atlas = ExtResource("2_b4153")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga5d1"]
+atlas = ExtResource("2_b4153")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w6v1"]
+atlas = ExtResource("2_b4153")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3dwa"]
+atlas = ExtResource("2_b4153")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdpmr"]
+atlas = ExtResource("2_b4153")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bytkx"]
+atlas = ExtResource("2_b4153")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15mr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmxw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xustd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jwls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhaiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wih0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o6bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1meu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hhekn")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_knxnk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dr2wb")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ga5d1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6w6v1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_v3dwa")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_xdpmr")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bytkx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdeq6"]
+radius = 18.0
+height = 58.0
+
+[node name="Woulf_Character" type="CharacterBody2D" unique_id=1092387618]
+
+[node name="wolf" type="AnimatedSprite2D" parent="." unique_id=1699157251]
+sprite_frames = SubResource("SpriteFrames_15mr3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6049487
+
+[node name="Area2D" type="Area2D" parent="wolf" unique_id=1966164361]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wolf/Area2D" unique_id=1937551237]
+position = Vector2(10, 36)
+shape = SubResource("CapsuleShape2D_mdeq6")
