@@ -1,10 +1,111 @@
 [gd_scene format=3 uid="uid://b32gsds3xlj4t"]
 
+[ext_resource type="Script" uid="uid://cfh6x8ywqrqfi" path="res://scripts/misc_scripts/end_screen.gd" id="1_a6kyb"]
 [ext_resource type="Texture2D" uid="uid://d3inn0asxct2u" path="res://assets/World/Background/back.png" id="1_jh7xj"]
+[ext_resource type="Texture2D" uid="uid://bwywpsj45sk55" path="res://assets/UI Buttons/MediavelFree.png" id="2_xasqr"]
+[ext_resource type="FontFile" uid="uid://xgoa55t4n6eg" path="res://assets/Font Pack/Paint-JpZDE.ttf" id="3_a6kyb"]
+[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="4_1ubrx"]
 
-[node name="end" type="Node2D" unique_id=1112709138]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py81n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1ism"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si7w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dl4nq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oyadk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p05js"]
+
+[node name="end" type="Control" unique_id=546550431]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a6kyb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=900051636]
 position = Vector2(578, 322.5)
 scale = Vector2(3.0104167, 2.6958334)
 texture = ExtResource("1_jh7xj")
+
+[node name="Board" type="Sprite2D" parent="." unique_id=519008318]
+z_index = 1
+position = Vector2(918, 299)
+scale = Vector2(5, 5)
+texture = ExtResource("2_xasqr")
+region_enabled = true
+region_rect = Rect2(3, 1, 71, 92)
+
+[node name="Label" type="Label" parent="." unique_id=1415493185]
+z_index = 1
+layout_mode = 0
+offset_left = 54.0
+offset_top = 166.0
+offset_right = 702.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0.99607843, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a6kyb")
+theme_override_font_sizes/font_size = 128
+text = "BAKa
+YOu died!"
+
+[node name="Vbox-Buttons" type="VBoxContainer" parent="." unique_id=1850104441]
+z_index = 2
+layout_mode = 0
+offset_left = 832.0
+offset_top = 259.0
+offset_right = 1010.0
+offset_bottom = 442.0
+theme_override_constants/separation = 30
+
+[node name="retry" type="Button" parent="Vbox-Buttons" unique_id=1137870773]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_1ubrx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py81n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1ism")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3si7w")
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="Vbox-Buttons" unique_id=1016524650]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_1ubrx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dl4nq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oyadk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p05js")
+text = "QUIT"
+
+[node name="Vbox-Holder" type="VBoxContainer" parent="." unique_id=1615821964]
+z_index = 1
+layout_mode = 0
+offset_left = 816.0
+offset_top = 304.0
+offset_right = 994.0
+offset_bottom = 471.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="Holder-Start" type="Sprite2D" parent="Vbox-Holder" unique_id=2129256427]
+position = Vector2(101, -21.999998)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("2_xasqr")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+metadata/_edit_lock_ = true
+
+[node name="Holder-Quit" type="Sprite2D" parent="Vbox-Holder" unique_id=344936669]
+position = Vector2(99, 52.000004)
+scale = Vector2(6.468749, 2.9482756)
+texture = ExtResource("2_xasqr")
+region_enabled = true
+region_rect = Rect2(224, 34, 32, 29)
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Vbox-Buttons/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Vbox-Buttons/Quit" to="." method="_on_quit_pressed"]

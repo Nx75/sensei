@@ -111,4 +111,4 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	get_tree().call_deferred("reload_current_scene")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/misc_scenes/end_screen.tscn")

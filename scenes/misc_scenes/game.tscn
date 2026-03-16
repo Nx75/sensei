@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bttsjij0ss8q0" path="res://enemies/Frog/frog.tscn" id="12_02q0t"]
 [ext_resource type="PackedScene" uid="uid://c6diiunn70psp" path="res://pickups/Cheery/cherry.tscn" id="14_1r3it"]
 [ext_resource type="Script" uid="uid://b4032np81wn7h" path="res://scripts/misc_scripts/home.gd" id="15_02q0t"]
+[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="16_1r3it"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqm3i"]
 texture = ExtResource("1_6q1or")
@@ -1001,6 +1002,7 @@ position = Vector2(50, -52)
 zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = -200
+limit_right = 2720
 limit_bottom = 207
 
 [node name="TileMap" type="TileMap" parent="." unique_id=139620049]
@@ -1059,6 +1061,12 @@ position = Vector2(310, 146)
 
 [node name="Frog2" parent="enemies" unique_id=1609284355 instance=ExtResource("12_02q0t")]
 position = Vector2(439, 146)
+
+[node name="ghost2" parent="enemies" unique_id=1313050087 instance=ExtResource("11_45lt1")]
+position = Vector2(1159, 116)
+
+[node name="Frog3" parent="enemies" unique_id=1849754199 instance=ExtResource("12_02q0t")]
+position = Vector2(1600, 161)
 
 [node name="computer_portal" parent="." unique_id=888117330 instance=ExtResource("11_1oxkl")]
 position = Vector2(1741, 167)
@@ -1131,6 +1139,35 @@ position = Vector2(1939, -90)
 [node name="computer_portal2" parent="." unique_id=1938326739 instance=ExtResource("11_1oxkl")]
 position = Vector2(2181, 103)
 script = ExtResource("15_02q0t")
+
+[node name="Label" type="Label" parent="." unique_id=285303175]
+offset_left = 600.0
+offset_top = -14.0
+offset_right = 762.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("16_1r3it")
+text = "You need
+ some trick "
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=1810860154]
+offset_left = 1069.0
+offset_top = 46.0
+offset_right = 1231.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("16_1r3it")
+text = "You might quit"
+
+[node name="Label3" type="Label" parent="." unique_id=1333827927]
+offset_left = 2568.0
+offset_top = -20.0
+offset_right = 2749.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("16_1r3it")
+theme_override_font_sizes/font_size = 8
+text = "You won 
+Now jump in water 
+to restart"
 
 [connection signal="body_entered" from="computer_portal" to="computer_portal" method="_on_body_entered"]
 [connection signal="body_entered" from="computer_portal2" to="computer_portal2" method="_on_body_entered"]

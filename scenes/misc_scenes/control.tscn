@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://wxjcayi7fl5a"]
+[gd_scene format=3 uid="uid://csuducgm6rmty"]
 
-[ext_resource type="Script" uid="uid://cbl0bqp1wxkaw" path="res://scripts/extras/menu.gd" id="1_4c782"]
-[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="2_4c782"]
-[ext_resource type="Texture2D" uid="uid://d3inn0asxct2u" path="res://assets/World/Background/back.png" id="2_fcydj"]
-[ext_resource type="FontFile" uid="uid://xgoa55t4n6eg" path="res://assets/Font Pack/Paint-JpZDE.ttf" id="2_jbsda"]
-[ext_resource type="Texture2D" uid="uid://bwywpsj45sk55" path="res://assets/UI Buttons/MediavelFree.png" id="4_2ot4n"]
+[ext_resource type="Script" uid="uid://cbl0bqp1wxkaw" path="res://scripts/extras/menu.gd" id="1_svacr"]
+[ext_resource type="FontFile" uid="uid://xgoa55t4n6eg" path="res://assets/Font Pack/Paint-JpZDE.ttf" id="2_6yj50"]
+[ext_resource type="FontFile" uid="uid://xo4fbn0kufve" path="res://assets/Font Pack/retro/retro.ttf" id="3_dquwi"]
+[ext_resource type="Texture2D" uid="uid://bwywpsj45sk55" path="res://assets/UI Buttons/MediavelFree.png" id="4_71vx0"]
+[ext_resource type="Texture2D" uid="uid://d3inn0asxct2u" path="res://assets/World/Background/back.png" id="5_8uyvp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ot4n"]
 
@@ -18,22 +18,22 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oumb1"]
 
-[node name="Menu" type="Control" unique_id=1644673144]
+[node name="Control" type="Control" unique_id=1644673144]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_4c782")
+script = ExtResource("1_svacr")
 
 [node name="Label" type="Label" parent="." unique_id=702937323]
 z_index = 1
 layout_mode = 0
-offset_left = 78.0
-offset_top = 141.0
-offset_right = 536.0
-offset_bottom = 298.0
+offset_left = 57.0
+offset_top = 60.0
+offset_right = 664.0
+offset_bottom = 217.0
 theme_override_colors/font_color = Color(0.18757069, 0.5685672, 0.81539077, 1)
-theme_override_fonts/font = ExtResource("2_jbsda")
+theme_override_fonts/font = ExtResource("2_6yj50")
 theme_override_font_sizes/font_size = 128
-text = "Sensei"
+text = "Control"
 
 [node name="Vbox-Buttons" type="VBoxContainer" parent="." unique_id=1533321767]
 z_index = 2
@@ -48,29 +48,18 @@ theme_override_constants/separation = 30
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_4c782")
+theme_override_fonts/font = ExtResource("3_dquwi")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2ot4n")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_0bcp5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_l8jcj")
 text = "START"
 
-[node name="Controls" type="Button" parent="Vbox-Buttons" unique_id=2017512833]
-z_index = 2
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_4c782")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jbsda")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_cop0s")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_oumb1")
-text = "Controls"
-
 [node name="Quit" type="Button" parent="Vbox-Buttons" unique_id=1302882086]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_4c782")
+theme_override_fonts/font = ExtResource("3_dquwi")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jbsda")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cop0s")
@@ -81,7 +70,7 @@ text = "QUIT"
 z_index = 1
 position = Vector2(905.00006, 347)
 scale = Vector2(5, 5)
-texture = ExtResource("4_2ot4n")
+texture = ExtResource("4_71vx0")
 region_enabled = true
 region_rect = Rect2(3, 1, 71, 92)
 
@@ -98,45 +87,38 @@ theme_override_constants/separation = 10
 [node name="Holder-Start" type="Sprite2D" parent="Vbox-Holder" unique_id=729461388]
 position = Vector2(88, 16)
 scale = Vector2(6.468749, 2.9482756)
-texture = ExtResource("4_2ot4n")
-region_enabled = true
-region_rect = Rect2(224, 34, 32, 29)
-
-[node name="Holder-Controls" type="Sprite2D" parent="Vbox-Holder" unique_id=233974270]
-position = Vector2(88, 166.99998)
-scale = Vector2(6.468749, 2.9482756)
-texture = ExtResource("4_2ot4n")
+texture = ExtResource("4_71vx0")
 region_enabled = true
 region_rect = Rect2(224, 34, 32, 29)
 
 [node name="Holder-Quit" type="Sprite2D" parent="Vbox-Holder" unique_id=1643195735]
 position = Vector2(88, 89)
 scale = Vector2(6.468749, 2.9482756)
-texture = ExtResource("4_2ot4n")
+texture = ExtResource("4_71vx0")
 region_enabled = true
 region_rect = Rect2(224, 34, 32, 29)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738298991]
 position = Vector2(579, 319)
 scale = Vector2(2.9947917, 2.6916666)
-texture = ExtResource("2_fcydj")
+texture = ExtResource("5_8uyvp")
 metadata/_edit_lock_ = true
 
-[node name="Label2" type="Label" parent="." unique_id=116768305]
+[node name="Label2" type="Label" parent="." unique_id=1402041683]
 z_index = 1
 layout_mode = 0
-offset_left = 77.0
-offset_top = 307.0
-offset_right = 863.0
-offset_bottom = 476.0
+offset_left = 54.0
+offset_top = 260.0
+offset_right = 840.0
+offset_bottom = 429.0
 theme_override_colors/font_color = Color(0.9308257, 0.26905414, 5.7756904e-07, 1)
-theme_override_fonts/font = ExtResource("2_jbsda")
+theme_override_fonts/font = ExtResource("2_6yj50")
 theme_override_font_sizes/font_size = 32
-text = "This is a game where you 
-will scramble your head 
-how to even complete it 
-good luck !"
+text = "Left/Right :- A/d
+space :- Jump
+Shift :- Dash
+jump on enemy head to kill
+Now use this and complete level "
 
 [connection signal="pressed" from="Vbox-Buttons/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Vbox-Buttons/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="Vbox-Buttons/Quit" to="." method="_on_quit_pressed"]
